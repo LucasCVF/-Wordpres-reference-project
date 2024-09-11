@@ -6,3 +6,10 @@ wp_enqueue_script(
     '5.3.3',
     true
 );
+
+wp_enqueue_script(
+    'jquery-theme', get_template_directory_uri().'/assets/vendor/jquery/jquery.min.js',
+    [],
+    '3.7.1',
+    true
+);
