@@ -1,0 +1,24 @@
+header {
+    background-color: #008C70;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+/* Quando a barra de admin estiver ativa */
+body.admin-bar header {
+    top: 32px; /* Altura da barra de admin */
+}
+
+/* Para telas menores, onde a barra é maior */
+@media screen and (max-width: 782px) {
+    body.admin-bar header {
+        top: 46px; /* Altura maior para telas menores */
+    }
+}
+
+
+
+ 
