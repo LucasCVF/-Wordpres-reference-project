@@ -47,12 +47,17 @@ function reference_project_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus(
-		array(
-			'main-menu' => esc_html__( 'Menu Principal', 'teste'),
-			'menu-rodape' => esc_html__( 'Menu do Rodapé', 'teste'),
-		)
-	);
+	function registrar_menus() {
+		register_nav_menus(
+			array(
+				'menu-header' => __('Menu Header'),
+				'main-menu' => esc_html__('Menu Principal', 'teste'),
+				'menu-rodape' => esc_html__('Menu do Rodapé', 'teste'),
+			)
+		);
+	}
+	add_action('init', 'registrar_menus');
+	
 
 	/*
 		* Switch default core markup for search form, comment form, and comments
