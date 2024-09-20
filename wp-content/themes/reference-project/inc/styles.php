@@ -7,3 +7,19 @@ wp_enqueue_style(
     'all'
 );
 
+wp_enqueue_style( 
+    'fontawesome', get_template_directory_uri() . '/assets/vendor/fontawesome/css/all.min.css', 
+    array(), 
+    '6.6.0',
+    'all' 
+);
+
+wp_enqueue_style( 
+    'theme-public', get_template_directory_uri() . '/assets/css/header.css', 
+    array(), 
+    '6.6.0',
+    'all' 
+);
+
+
+
