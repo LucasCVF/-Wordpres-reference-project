@@ -17,7 +17,14 @@ wp_enqueue_style(
 wp_enqueue_style( 
     'theme-public', get_template_directory_uri() . '/assets/css/header.css', 
     array(), 
-    '6.6.0',
+    '',
+    'all' 
+);
+
+wp_enqueue_style( 
+    'home-styles', get_template_directory_uri() . '/assets/css/home.css', 
+    array(), 
+    '',
     'all' 
 );
 

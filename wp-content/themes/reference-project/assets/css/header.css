@@ -12,7 +12,8 @@ header {
 }
 
 .logo-nav{
-    width: 85%;
+    height: 60px;
+    max-width: 100%;
 }
 
 
@@ -29,6 +30,7 @@ body.admin-bar header {
 }
 
 .nav-menu a {
+    margin-left: auto;
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -36,10 +38,32 @@ body.admin-bar header {
 }
 
 .nav-menu a:hover {
+    margin-left: auto;
     color: #D6DE23;
     text-decoration: none;
     font-weight: bold;
     transition: all .3s;
+}
+
+/* Estilo para o dropdown */
+.nav-menu a.dropdown-menu {
+    background-color: black; /* Cor de fundo do dropdown */
+    color:black;
+}
+
+/* Estilo para os itens do dropdown */
+.nav-menu a.dropdown-item {
+    color: black; /* Cor do texto dos itens */
+}
+
+/* Esconde o dropdown por padrão */
+.dropdown-menu {
+    display: none; /* Esconde o dropdown */
+}
+
+/* Exibe o dropdown ao passar o mouse sobre o item */
+.nav-item:hover .dropdown-menu {
+    display: block; /* Mostra o dropdown ao passar o mouse */
 }
 
 .nav-menu li {
