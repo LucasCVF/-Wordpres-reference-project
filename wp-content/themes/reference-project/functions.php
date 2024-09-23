@@ -158,6 +158,11 @@ function reference_project_scripts() {
 add_action( 'wp_enqueue_scripts', 'reference_project_scripts' );
 
 /**
+ * Implement the Custom dropdow bootstrap.
+ */
+require_once get_template_directory() . '/inc/nacwalker.php';
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
