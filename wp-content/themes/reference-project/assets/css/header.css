@@ -45,16 +45,22 @@ body.admin-bar header {
     transition: all .3s;
 }
 
+.navbar-nav .nav-link.active {
+    color: white !important; /* Mantém a cor padrão mesmo quando clicado */
+}
+
 /* Estilo para o dropdown */
 .nav-menu a.dropdown-menu {
     background-color: black; /* Cor de fundo do dropdown */
     color:black;
+    font-weight: 100;
 }
 
 /* Estilo para os itens do dropdown */
 .nav-menu a.dropdown-item {
     color: black; /* Cor do texto dos itens */
-}
+    font-weight: 100;
+}   
 
 /* Esconde o dropdown por padrão */
 .dropdown-menu {
