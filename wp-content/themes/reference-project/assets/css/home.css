@@ -1,3 +1,41 @@
 .home-content {
     padding-top: 90px;
 }
+
+.image-content{ 
+    width: 500px;
+    height:500px;
+}
+.custom-indicators {
+    position: absolute;
+    top: 10px; /* ajuste conforme necessário */
+    left: 10px; /* ajuste conforme necessário */
+    z-index: 10; /* assegura que os botões fiquem acima das imagens */
+    display: flex; /* permite o uso de flexbox */
+    flex-direction: column; /* alinha os botões em coluna */
+}
+
+.custom-indicators button {
+    background-color: #fff; /* cor de fundo */
+    border: none;
+    border-radius: 50%; /* forma circular */
+    width: 30px; /* largura do botão */
+    height: 30px; /* altura do botão */
+    margin: 5px 0; /* espaço entre os botões (vertical) */
+    cursor: pointer;
+    transition: background-color 0.3s; /* animação ao passar o mouse */
+}
+
+.custom-indicators button.active {
+    background-color: #007bff; /* cor quando ativo */
+}
+
+.custom-indicators button:hover {
+    background-color: #007bff; /* cor ao passar o mouse */
+}
+
+
+
+
+
+
