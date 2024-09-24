@@ -12,3 +12,10 @@ wp_enqueue_script(
     '5.3.3',
     true
 );
+
+wp_enqueue_script(
+    'carousel', get_template_directory_uri().'/assets/js/carousel.js',
+    ['jquery-theme'],
+    '',
+    true
+);
