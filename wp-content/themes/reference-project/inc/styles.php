@@ -28,5 +28,12 @@ wp_enqueue_style(
     'all' 
 );
 
+wp_enqueue_style( 
+    'home-styles', get_template_directory_uri() . '/assets/css/post.css', 
+    array(), 
+    '',
+    'all' 
+);
+
 
 
