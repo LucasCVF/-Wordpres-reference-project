@@ -24,8 +24,8 @@
             </div>
         </div>
 
-        <div class="row borderrr">
-            <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-5">
                 
                 <?php
                 // BUSCA DO POST MAIS RECENTE
@@ -38,64 +38,66 @@
                     $post = $most_recent_post[0]; ?>
                     
                     <!-- EXIBE O POST MAIS RECENTE -->
-                    <div class="most-recent-post">
+                    <div class="most-recent-post position-relative">
                         <?php if ( has_post_thumbnail( $post['ID'] ) ) : ?><!-- EXIBE IMAGEM DESTACADA -->
                             <a href="<?php echo get_permalink($post['ID']); ?>">
                                 <?php echo get_the_post_thumbnail( $post['ID'], 'large', ['class' => 'img-fluid image-custom']); ?>
                             </a>
                         <?php endif; ?>
-                        
-                        <a href="<?php echo get_permalink($post['ID']); ?>"><!-- EXIBE TITULO DO POST -->
-                            <h3><?php echo esc_html($post['post_title']); ?></h3>
-                        </a>
-                        <!-- EXIBE DATA DO POST -->
-                        <span class="post-date">
-                            <?php echo get_the_date('d/m/Y', $post['ID']); ?> 
-                            - <?php echo get_the_time('H:i', $post['ID']); ?>
-                        </span>
+                        <div class="image-text">
+                            <a class="edit-text-title" href="<?php echo get_permalink($post['ID']); ?>"><!-- EXIBE TITULO DO POST -->
+                                <?php echo esc_html($post['post_title']); ?>
+                            </a><br>
+                            <!-- EXIBE DATA DO POST -->
+                            <span class="post-date edit-text">
+                                <?php echo get_the_date('d/m/Y', $post['ID']); ?> 
+                                - <?php echo get_the_time('H:i', $post['ID']); ?>
+                            </span>
+                        </div>
                     </div>
                 <?php endif; ?>
             </div>
             
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <ul class="recent-posts m-0 p-0">
                     <?php
-                    // BUSCA DOS PRÓXIMOS 4 POSTS RECENTES (excluindo o primeiro)
+                    // BUSCA DOS PRÓXIMOS 3 POSTS RECENTES (excluindo o primeiro)
                     $recent_posts = wp_get_recent_posts(array(
-                        'numberposts' => 3, // EXIBE OS 4 POSTS RECENTES
+                        'numberposts' => 3, // EXIBE OS 3 POSTS RECENTES
                         'offset' => 1, // IGNORA O PRIMEIRO POST EXIBIDO
                         'post_status' => 'publish' // APENAS POSTS PUBLICADOS
                     ));
 
                     foreach($recent_posts as $post) : ?>
-                        <div class="mb-3"> <!-- Margem inferior para dar espaçamento -->
+                        <div class="mb-3">
                             <div class="row">
                                 <?php if ( has_post_thumbnail( $post['ID'] ) ) : ?><!-- EXIBE IMAGEM DESTACADA -->
-                                    <div class="col-4"> <!-- Coluna para a imagem -->
-                                        <a href="<?php echo get_permalink($post['ID']); ?>">
+                                    <div class="col-md-5">
+                                        <a class="img-fluid three-img" href="<?php echo get_permalink($post['ID']); ?>">
                                             <?php echo get_the_post_thumbnail( $post['ID'], 'thumbnail', ['class' => 'img-fluid three-images-custom'] ); ?>
                                         </a>
                                     </div>
                                 <?php endif; ?>
 
-                                <div class="col-8"> <!-- Coluna para o texto -->
-                                    <a href="<?php echo get_permalink($post['ID']); ?>" class="recent-post-title">
+                                <div class="col-md-7">
+                                    <a href="<?php echo get_permalink($post['ID']); ?>" class="three-recent-post-title three-edit-text-title">
                                         <?php echo esc_html($post['post_title']); ?>
                                     </a>
-                                    <br>
                                     <span class="post-date">
                                         <?php echo get_the_date('d/m/Y', $post['ID']); ?> - <?php echo get_the_time('H:i', $post['ID']); ?>
                                     </span>
+                                    <div class="entry-content three-recent-post-content m-0">
+                                        <?php
+                                            echo wp_trim_words( get_the_content(null, false, $post['ID']), 30, '...' );
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
                 </ul>
             </div>
-
-
         </div>
-
     </div>
 </section>
 
