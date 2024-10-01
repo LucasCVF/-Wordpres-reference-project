@@ -158,9 +158,15 @@ function reference_project_scripts() {
 add_action( 'wp_enqueue_scripts', 'reference_project_scripts' );
 
 /**
- * Implement the Custom dropdow bootstrap.
+ * Implement the carbon fields and autoload
  */
-require_once get_template_directory() . '/inc/nacwalker.php';
+require_once get_template_directory() . '/vendor/autoload.php';
+require_once get_template_directory() . '/template-parts/post-type-history.php';
+
+/**
+ * Implement the Custom dropdow bootstrap
+ */
+require_once get_template_directory() . '/inc/navwalker.php';
 
 /**
  * Implement the Custom Header feature.
