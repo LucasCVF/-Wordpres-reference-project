@@ -1,0 +1,35 @@
+$prim_color-1: #FCFC30; // Amarelo
+$prim_color-2: #002D4B; // Azul
+$prim_color-3: #FFFFFF; // Branco
+
+/// Função que mantem as proporções das imagens
+/// @param $width: Valor em pixel ou a proporção de tamanho desejada
+/// @param $height: Valor em pixel ou a proporção de largura desejada
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+    display: block;
+
+    &:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: calc($height / $width) * 100%;
+    }
+    
+    > a, img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+}
+/// Limita a quantidade de linhas exibidas
+/// @param $lines: Número de linhas
+@mixin limits_number_of_lines($lines) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    visibility: visible;
+}

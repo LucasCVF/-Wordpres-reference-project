@@ -14,10 +14,10 @@
 /wp-includes/
 /index.php
 /license.txt
-/readme.html
+/readme.htmls
 /wp-*.php
 /xmlrpc.php
-
+/wp-content/themes/reference-project/node_modules/
 # Configuration
 wp-config.php
 
