@@ -14,7 +14,14 @@ wp_enqueue_script(
 );
 
 wp_enqueue_script(
-    'carousel', get_template_directory_uri().'/assets/js/carousel.js',
+    'carousel', get_template_directory_uri().'/assets/public/js/public.min.js',
+    ['jquery-theme'],
+    '',
+    true
+);
+
+wp_enqueue_script(
+    'slick', get_template_directory_uri().'/assets/vendor/slick/slick.js',
     ['jquery-theme'],
     '',
     true

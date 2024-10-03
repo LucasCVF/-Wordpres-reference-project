@@ -23,6 +23,25 @@
                 </div>
             </div>
         </div>
+        <div class="single-item">
+            <div>
+                <h1>SLIDE DE HISTORIAS</h1>
+            </div>
+            <div>
+                <h1>SLIDE DE HISTORIAS</h1>
+            </div>
+            <div>
+                <h1>SLIDE DE HISTORIAS</h1>
+            </div>
+        </div>
+        <div class="control-btn-card-spaces">
+            <button class="list-cs btn-previus">
+                <i class=""> < </i>
+            </button>
+            <button class="list-cs btn-next">
+                <i class=""> > </i>
+            </button>
+        </div>
 
         <div class="row">
             <div class="col-md-5">

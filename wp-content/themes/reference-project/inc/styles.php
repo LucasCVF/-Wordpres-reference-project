@@ -15,21 +15,14 @@ wp_enqueue_style(
 );
 
 wp_enqueue_style( 
-    'theme-public', get_template_directory_uri() . '/assets/css/header.css', 
+    'theme-public', get_template_directory_uri() . '/assets/public/css/public.min.css', 
     array(), 
     '',
     'all' 
 );
 
 wp_enqueue_style( 
-    'home-styles', get_template_directory_uri() . '/assets/css/home.css', 
-    array(), 
-    '',
-    'all' 
-);
-
-wp_enqueue_style( 
-    'home-styles', get_template_directory_uri() . '/assets/css/post.css', 
+    'slick', get_template_directory_uri() . '/assets/vendor/slick/slick.css', 
     array(), 
     '',
     'all' 
