@@ -2,14 +2,7 @@
 /* Template Name: Histórias */
 
 get_header(); ?>
-
-<h1>Histórias</h1>
-<h1>Histórias</h1>
-<h1>Histórias</h1>
-<h1>Histórias</h1>
-<h1>Histórias</h1>
-<h1>Histórias</h1>
-
+    
 <?php
 $args = array(
     'post_type' => 'historia',

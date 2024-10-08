@@ -4,7 +4,7 @@ $(function() {
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        dots: true,
+        dots: false,
         arrows: false,
         autoplay: true,
         autoplaySpeed: 4000,
@@ -33,6 +33,7 @@ $(function() {
             }
         ]
     });
+
 
     //ICONE DE NEXT
     $('.list-cs.btn-previus').click(function(){

@@ -154,8 +154,63 @@
 }
 /* ---------------------------------END STYLES POSTS THREE---------------------------------- */
 
+/* ---------------------------------INIT HISTORY POST---------------------------------- */
+.slick-dots {
+    display: none !important;
+}
 
+.container-history {
+    text-align: center;
+    position: relative;
+    background-color: white;
+}
 
+.content-history {
+    background-color: white;
+    max-width: 98%;
+    text-align: start;
+    margin: 10px;
+    margin-top: 12px;
+    border-radius: 25px;
+}
+.square {
+    width: 150px;
+    height: 150px;
+    border-radius: 35px;
+    background-color: #C5158C;
+    position: absolute;
+}
+.container-content-history {
+    padding: 50px;
+}
+.container-img-history {
+
+    padding-right: 50px;
+}
+.img-history {
+    border-radius: 25px;
+}
+.history-title {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #C5158C;
+}
+.history-text {
+    max-height: 6em; /* Altura máxima para 4 linhas (ajuste conforme necessário) */
+    overflow: hidden;
+    line-height: 1.5; /* Altura da linha */
+}
+
+.button-1 {
+    text-decoration: none;
+    background-color: #C5158C;
+    color: white;
+}
+
+.button-2 {
+    text-decoration: none;
+    color: #4F5354;
+}
 
 
 
