@@ -184,12 +184,22 @@
     padding: 50px;
 }
 .container-img-history {
+    
+    @include aspect-ratio(4, 4);
+            
+        img {
+            padding-left: 12px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+}
 
-    padding-right: 50px;
-}
 .img-history {
-    border-radius: 25px;
+    border-radius: 30px;       
+ 
 }
+     
 .history-title {
     text-transform: uppercase;
     font-weight: 700;
@@ -202,20 +212,70 @@
 }
 
 .button-1 {
+    padding: 15px 20px 15px 30px;
     text-decoration: none;
     background-color: #C5158C;
     color: white;
+    border-radius: 25px;
+    font-weight: bold;
+}
+.margin {
+    margin-top: 70px;
+}
+.button-1:focus,
+.button-1:active,
+.button-1:visited {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
 }
 
 .button-2 {
+    padding: 15px 20px 15px 30px;
     text-decoration: none;
     color: #4F5354;
+    font-weight: bold;
 }
 
+.button-2:hover {
+    padding: 13px 18px 13px 28px;
+    border: #4F5354 2px solid;
+    border-radius: 25px;
+    transition: 0.1s;
+}
 
+.button-2:focus,
+.button-2:active,
+.button-2:visited {
+    color: #4F5354;
+    text-decoration: none;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+}
 
-
-
+.arrows{
+    padding-left: 30px;
+    padding-right: 10px;
+}
+.arrows-next-previus{
+    border: solid 2px #C5158C;
+    background-color: #C5158C;
+    color: white;
+    border-radius: 15px;
+    padding: 2px 70px 2px 70px;
+    margin:  0 70px 0 70px;
+}
+.arrows-next-previus:hover{
+    border: solid 2px #C5158C;
+    background-color: white;
+    color: #C5158C;
+    border-radius: 15px;
+    padding: 2px 70px 2px 70px;
+    margin: 0 70px 0 70px;
+}
 
 
 

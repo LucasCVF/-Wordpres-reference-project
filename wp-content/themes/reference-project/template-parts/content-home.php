@@ -25,20 +25,16 @@
         </div>
 
         <div class="container-history row">
-            <div class="col-1">
-                <button class="list-cs btn-previus">
-                    <i class=""> < </i>
-                </button>
-            </div>
-
-            <div class="col-10">
+            <div class="col-12 p-0">
                 <div class="square"></div>
                 <div class="single-item content-relative">
-                    <div class="content-history">
-                        <?php
+                    <?php
+                        // Loop para exibir as 3 histórias mais recentes
+                        for ($i = 0; $i < 4; $i++) :
                             $args = array(
                                 'post_type'      => 'historia',
-                                'posts_per_page' => 1, // Pega apenas a mais recente
+                                'posts_per_page' => 1, // Pega apenas uma história por vez
+                                'offset'         => $i, // Define o deslocamento para pegar diferentes histórias
                                 'orderby'        => 'date', // Ordena pela data
                                 'order'          => 'DESC' // Exibe a mais recente primeiro
                             );
@@ -47,124 +43,49 @@
 
                             if ($recent_historia->have_posts()) :
                                 while ($recent_historia->have_posts()) : $recent_historia->the_post(); ?>
-                                <div class="row">
-                                    <div class="col-md-5 container-img-history">
-                                        <?php
-                                            if (has_post_thumbnail()) {
-                                                echo get_the_post_thumbnail(0, 'large', ['class' => 'img-history']);
-                                            }
-                                        ?>
-                                    </div>
-                                    <div class="col-md-7 container-content-history">
-                                        <h2 class="history-title"><?php the_title(); ?></h2>
-                                        <div class="history-text"><?php the_content(); ?></div>
-                                        <div class="row mt-5">
-                                            <div class="col-6"><a class="button-1 p-3" href="">Saiba mais ></a></div>
-                                            <div class="col-6"><a class="button-2 p-3" href="">Agendar agora! ></a></div>    
+                                    <div class="content-history">
+                                        <div class="row">
+                                            <div class="col-md-5 container-img-history">
+                                                <?php
+                                                    if (has_post_thumbnail()) {
+                                                        echo get_the_post_thumbnail(0, '', ['class' => 'img-history']);
+                                                    }
+                                                ?>
+                                            </div>
+                                            <div class="col-md-7 container-content-history margin">
+                                                <h2 class="history-title"><?php the_title(); ?></h2>
+                                                <div class="history-text"><?php the_content(); ?></div>
+                                                <div class="row margin">
+                                                    <div class="col-6">
+                                                        <a class="button-1" href="">Saiba mais <i class="fa-solid fa-arrow-right arrows"></i></a>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <a class="button-2" href="">Agendar agora! <i class="fa-solid fa-arrow-right arrows"></i></a>
+                                                    </div>    
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>                   
+                                    </div>                   
                                 <?php endwhile;
                             else : ?>
                                 <p>Nenhuma história encontrada.</p>
                             <?php endif;
 
                             wp_reset_postdata(); // Reseta os dados do post para não interferir em outras partes da página
-                        ?>
-
-                    </div>
-                    <div class="content-history">
-                        <?php
-                            $args = array(
-                                'post_type'      => 'historia',
-                                'posts_per_page' => 1, // Pega apenas a mais recente
-                                'offset'         => 1,
-                                'orderby'        => 'date', // Ordena pela data
-                                'order'          => 'DESC' // Exibe a mais recente primeiro
-                            );
-
-                            $recent_historia = new WP_Query($args);
-
-                            if ($recent_historia->have_posts()) :
-                                while ($recent_historia->have_posts()) : $recent_historia->the_post(); ?>
-                                <div class="row">
-                                    <div class="col-md-5 container-img-history">
-                                        <?php
-                                            if (has_post_thumbnail()) {
-                                                // Exibe a imagem destacada com um tamanho específico (medium, full, ou um tamanho personalizado)
-                                                the_post_thumbnail();
-                                            }
-                                        ?>
-                                    </div>
-                                    <div class="col-md-7 container-content-history">
-                                        <h2 class="history-title"><?php the_title(); ?></h2>
-                                        <div class="history-text"><?php the_content(); ?></div>
-                                        <div class="row mt-5">
-                                            <div class="col-6"><a class="button-1 p-3" href="">Saiba mais ></a></div>
-                                            <div class="col-6"><a class="button-2 p-3" href="">Agendar agora! ></a></div>    
-                                        </div>
-                                    </div>
-                                </div>                    
-                                <?php endwhile;
-                            else : ?>
-                                <p>Nenhuma história encontrada.</p>
-                            <?php endif;
-
-                            wp_reset_postdata(); // Reseta os dados do post para não interferir em outras partes da página
-                        ?>
-
-                    </div>
-                    <div class="content-history">
-                        <?php
-                            $args = array(
-                                'post_type'      => 'historia',
-                                'posts_per_page' => 1, // Pega apenas a mais recente
-                                'offset'         => 2,
-                                'orderby'        => 'date', // Ordena pela data
-                                'order'          => 'DESC' // Exibe a mais recente primeiro
-                            );
-
-                            $recent_historia = new WP_Query($args);
-
-                            if ($recent_historia->have_posts()) :
-                                while ($recent_historia->have_posts()) : $recent_historia->the_post(); ?>
-                                <div class="row">
-                                    <div class="col-md-5 container-img-history">
-                                        <?php
-                                            if (has_post_thumbnail()) {
-                                                // Exibe a imagem destacada com um tamanho específico (medium, full, ou um tamanho personalizado)
-                                                the_post_thumbnail();
-                                            }
-                                        ?>
-                                    </div>
-                                    <div class="col-md-7 container-content-history">
-                                        <h2 class="history-title"><?php the_title(); ?></h2>
-                                        <div class="history-text"><?php the_content(); ?></div>
-                                        <div class="row mt-5">
-                                            <div class="col-6"><a class="button-1 p-3" href="">Saiba mais ></a></div>
-                                            <div class="col-6"><a class="button-2 p-3" href="">Agendar agora! ></a></div>    
-                                        </div>
-                                    </div>
-                                </div>                      
-                                <?php endwhile;
-                            else : ?>
-                                <p>Nenhuma história encontrada.</p>
-                            <?php endif;
-
-                            wp_reset_postdata(); // Reseta os dados do post para não interferir em outras partes da página
-                        ?>
-
-                    </div>
+                        endfor;
+                    ?>
                 </div>
             </div>
-
-            <div class="col-1">
-                <button class="list-cs btn-next">
-                    <i class=""> > </i>
+            <div class="mb-5">
+                <button class="list-cs btn-previus arrows-next-previus">
+                    <i class="fa-solid fa-chevron-left fa-beat fa-lg"></i>
+                </button>
+                <button class="list-cs btn-next arrows-next-previus">
+                    <i class="fa-solid fa-chevron-right fa-beat fa-lg"></i>
                 </button>
             </div>
-            
         </div>
+
 
         <div class="row">
             <div class="col-md-5">
