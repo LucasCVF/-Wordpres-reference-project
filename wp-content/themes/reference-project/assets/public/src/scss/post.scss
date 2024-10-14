@@ -1,0 +1,25 @@
+.btn-edit {
+    padding: 5px 20px 5px 20px;
+    text-decoration: none;
+    background-color: #008C70;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.btn-edit:hover {
+    padding: 5px 20px 5px 20px;
+    text-decoration: none;
+    background-color: #D6DE23;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.btn-edit:focus,
+.btn-edit:active,
+.btn-edit:visited {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+}

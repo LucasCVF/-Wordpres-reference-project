@@ -6,7 +6,6 @@
  *
  * @package Reference_project
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -34,7 +33,7 @@
                         <?php the_excerpt(); ?>
                     </div>
                     <!-- BOTAO "LEIA MAI"S" QUE DIRECIONA PARA O POST INDIVIDUAL-->
-                    <a href="<?php echo get_permalink(); ?>" class="btn btn-primary m-3">Leia mais</a>
+                    <a href="<?php echo get_permalink(); ?>" class="btn-edit">Leia mais</a>
                 </div>
             </div>
         </div>
